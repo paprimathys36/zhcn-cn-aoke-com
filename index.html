@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aoke · 从心收藏 再访如故</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #ffffff;
+      color: #1e1e1e;
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+
+    /* 深色头图 hero */
+    .hero {
+      background: linear-gradient(145deg, #0f1419 0%, #1b222b 80%);
+      color: #eceef0;
+      padding: 4rem 2rem 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: #ffffff;
+      border-radius: 40% 40% 0 0 / 100% 100% 0 0;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #b0bec5;
+      max-width: 520px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: #2d3f4e;
+      color: #cfd8dc;
+      padding: 0.5rem 1.4rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* 浅色正文区 */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1.8rem;
+    }
+
+    .intro-section {
+      margin-top: -1.2rem;
+      padding: 2.5rem 0 1.5rem 0;
+    }
+
+    .intro-section p {
+      margin-bottom: 1.6rem;
+      font-size: 1.02rem;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin: 2.2rem 0;
+    }
+
+    .card {
+      background: #f8fafc;
+      border-left: 5px solid #1f5a7a;
+      padding: 1.5rem 1.8rem;
+      border-radius: 0 18px 18px 0;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.02);
+    }
+
+    .card h3 {
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: #1f3a4b;
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      color: #2c3e50;
+      margin-bottom: 0.3rem;
+    }
+
+    /* 强调色链接 */
+    a {
+      color: #1f6a8a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, background 0.15s ease;
+    }
+
+    a:hover {
+      border-bottom: 1px solid #1f6a8a;
+      background: #eaf2f7;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .highlight-link {
+      background: #e4edf5;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+
+    .faq-summary {
+      background: #f2f6fa;
+      padding: 1.8rem 2rem;
+      border-radius: 24px;
+      margin: 2.8rem 0;
+    }
+
+    .faq-summary h4 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #1b2c39;
+    }
+
+    .faq-item {
+      display: flex;
+      gap: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      min-width: 6em;
+      color: #2b4a5e;
+    }
+
+    .faq-a {
+      color: #3b4f5c;
+    }
+
+    /* 页尾访问提示 */
+    .page-footer {
+      text-align: center;
+      padding: 2.8rem 1.5rem 2.2rem;
+      border-top: 1px solid #e0e7ed;
+      margin-top: 2rem;
+    }
+
+    .page-footer .foot-note {
+      background: #f2f6fc;
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      border-radius: 48px;
+      font-size: 0.95rem;
+      color: #1f3a4b;
+    }
+
+    .page-footer .foot-note a {
+      font-weight: 600;
+    }
+
+    .page-footer small {
+      display: block;
+      margin-top: 1.8rem;
+      color: #7c8a96;
+      font-size: 0.8rem;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero .sub {
+        font-size: 0.95rem;
+      }
+      .card {
+        padding: 1.2rem 1rem;
+      }
+      .faq-summary {
+        padding: 1.4rem 1.2rem;
+      }
+      .page-footer .foot-note {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1rem;
+      }
+      .hero {
+        padding: 3rem 1.2rem 4rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 首页横幅 hero -->
+  <header class="hero">
+    <h1>aoke · 再访如故</h1>
+    <p class="sub">收藏一页安静，回头仍是熟悉角落。每一次打开都像按下暂停键。</p>
+    <span class="tagline">📌 从再次访问开始</span>
+  </header>
+
+  <div class="container">
+
+    <!-- 背景说明 + 三段自然介绍 -->
+    <section class="intro-section">
+      <p>
+        网络里总有一些地方，你匆匆路过，却忍不住想回头再坐坐。<strong>aoke</strong> 就是这样一个存在——不喧哗，不催促，只在你需要的时候，提供一份干净清爽的阅读与浏览。
+      </p>
+      <p>
+        也许第一次相遇只是偶然，但第二次、第三次……每次重新输入 <a href="https://zhcn-cn-aoke.com">aoke</a> 的地址，都像回到一个熟悉的位置。页面加载的瞬间，那种从容的节奏感，恰恰是今天数字生活里稀缺的。
+      </p>
+      <p>
+        很多人习惯把喜欢的站点存入书签，但收藏夹越深，越容易遗忘。不如把 <a href="https://zhcn-cn-aoke.com" class="highlight-link">aoke</a> 放在浏览器常驻栏，或者记在备忘录一角。下次想安静地看看信息、梳理思绪时，直接走过去就好。
+      </p>
+    </section>
+
+    <!-- 卡片式介绍：再次访问 & 收藏 & 持续关注 -->
+    <div class="card-grid">
+      <div class="card">
+        <h3>🔁 再次访问 · 不迷路</h3>
+        <p>每次打开 <a href="https://zhcn-cn-aoke.com">aoke</a>，界面稳定，内容连贯。不用重新适应布局，也不用担心找不到上次的入口。对于习惯深度浏览的人来说，这种「不变」本身就很省心。</p>
+      </div>
+      <div class="card">
+        <h3>📑 收藏 · 轻量记忆</h3>
+        <p>收藏一个站点，有时候收藏的是一种氛围。<a href="https://zhcn-cn-aoke.com">aoke</a> 没有繁复的推送，没有弹窗干扰，适合放进「常读」列表。无论是笔记里、浏览器书签，还是手机桌面，它都安安静静待命。</p>
+      </div>
+      <div class="card">
+        <h3>👁️ 持续关注 · 不必刻意</h3>
+        <p>关注不一定要每天签到，偶尔想起时去 <a href="https://zhcn-cn-aoke.com">aoke</a> 看看，反而更自然。没有压力，没有未读红点，只有你主动选择的目光。这或许就是最舒服的「关注」状态。</p>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要风格（生活化问答） -->
+    <div class="faq-summary">
+      <h4>💬 一些朋友常问的</h4>
+      <div class="faq-item">
+        <span class="faq-q">“需要注册吗？”</span>
+        <span class="faq-a">不用。直接打开 <a href="https://zhcn-cn-aoke.com">aoke</a> 就好，没有登录门槛。</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">“内容会经常变吗？”</span>
+        <span class="faq-a">会有更新，但整体风格和结构保持稳定，不会让你每次都觉得陌生。</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">“怎么才能不忘记这里？”</span>
+        <span class="faq-a">放在书签栏，或者微信里给自己发个笔记。下次心血来潮，直接搜 <a href="https://zhcn-cn-aoke.com">aoke</a> 也能找到。</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <footer class="page-footer">
+    <div class="foot-note">
+      🧭 如果觉得这里还不错，随时可以回来 ——<br>
+      <a href="https://zhcn-cn-aoke.com" style="font-size: 1.1rem;">aoke</a> 就在收藏夹里等你。
+    </div>
+    <small>— 不用刻意，记得就好 —</small>
+  </footer>
+
+</body>
+</html>

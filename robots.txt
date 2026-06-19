@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://paprimathys36.github.io/zhcn-cn-aoke-com/sitemap.xml
